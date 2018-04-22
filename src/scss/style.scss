@@ -12,10 +12,10 @@ $normal: 300;
 $semibold: 500;
 $bold: 600;
 
-$txt-primary: #505050;
+$txt-primary: #a1a1a1;
 $title: #4C5666;
 $nav:#909090;
-$sand:sandybrown;
+$wine:#8C001A;
 // $dark-blue: #083896;
 // $grey-bg: #F5F5F5;
 // $nobel: #979797;
@@ -79,12 +79,12 @@ body {
 	}
 
 	header.hero {
-		max-height:600px;
-		background-size: cover;
+		height:650px;
+		background-size: cover !important;
     	background-position: 50% 50%;
-		background: url(/images/ventura_hero.jpg);
+		background: url(/images/ventura_hero_crop.jpg) no-repeat;
 
-		@media (min-width: 768px){
+		@media (max-width: 768px){
 			max-height:550px;
 		}
 
@@ -92,15 +92,15 @@ body {
 			position:relative;
 			margin: 20px;
 			border: 2px solid #fff;
-			min-height:550px;
+			height:600px;
 			padding-top:20px;
 			text-align: center;
 			display: flex;
 			justify-content:center;
 			vertical-align:center;
 
-			@media (min-width: 768px){
-				min-height:450px;
+			@media (max-width: 768px){
+				max-height:450px;
 			}
 
 			.content {
@@ -133,15 +133,16 @@ body {
 
 		li {
 			display:inline-block;
-			padding: 7px 0;
 
 			&:hover {
-				border-bottom: 3px solid $sand;
+				border-bottom: 3px solid $wine;
 			}
 
 			a {
 				text-decoration:none;
 				color:$nav;
+				padding:20px 15px;
+				font-size:18px;
 
 				&:hover{
 					background-color:#fff;
@@ -153,18 +154,66 @@ body {
 	section {
 
 		.icons {
-			display:block;
+			display:flex;
+			justify-content: space-between;
+			position:relative;
+			padding: 25px 0;
 
-			span {
-				display:inline-block;
-				height: 25px;
-    			width: 25px;
-    			text-indent: -999em;
+			.item span {
+				display:block;
 
-				.map {
-					background: url('../src/images/map.svg'), no-repeat;
+				&.number {
+					font-size:22px;
 				}
 
+				&.label {
+					color: $txt-primary;
+					font-size:16px;
+				}
+			}
+
+			span.map {
+				&:after {
+					content: '';
+					background: transparent url('../images/map.svg') no-repeat 50% 50%;
+					display: inline-block;
+					height: 76px;
+	    			width: 80px;
+					background-size: contain;
+				}
+			}
+
+			span.venue {
+				&:after {
+					content: '';
+					background: transparent url('../images/venue.svg') no-repeat 50% 50%;
+					display: inline-block;
+					height: 76px;
+	    			width: 80px;
+					background-size: contain;
+				}
+			}
+
+			span.tickets {
+				&:after {
+					content: '';
+					background: transparent url('../images/tickets.svg') no-repeat 50% 50%;
+					display: inline-block;
+					height: 76px;
+	    			width: 80px;
+					background-size: contain;
+				}
+			}
+
+			span.reviews {
+				&:after {
+					content: '';
+					background: transparent url('../images/reviews.svg') no-repeat 50% 50%;
+					display: inline-block;
+					height: 76px;
+	    			width: 80px;
+					background-size: contain;
+				}
 			}
 		}
 
@@ -172,32 +221,41 @@ body {
 
 			.image-promo {
 				position:relative;
-				padding:40px 0;
+				padding:50px 0;
+				display:flex;
+				justify-content: center;
 
 				.block {
 						position: relative;
 						top: 50px;
 						z-index: 999;
-						padding: 30px;
+						padding:50px 35px;
 						background-color: #fff;
 						box-shadow: 1px 1px 19px 4px #8888887a;
+						max-height:300px;
 
-						.text {
+						@media (max-width:1024px){
+							padding: 30px;
+						}
+
+						h3, .text {
 							text-align:left;
+						}
+
+						span.left-corner {
+							position: absolute;
+							top: 10px;
+							left: 10px;
+						}
+
+						span.right-corner {
+							position: absolute;
+							bottom: 10px;
+							right: 10px;
 						}
 				}
 
-				span.left-corner {
-					position: absolute;
-					bottom: 10px;
-					right: 10px;
-				}
 
-				span.right-corner {
-					position: absolute;
-					bottom: 10px;
-					right: 10px;
-				}
 				.left {
 					right: -80px;
 				}
@@ -217,10 +275,6 @@ body {
 					}
 				}
 			}
-		}
-
-		&#photos {
-
 		}
 	}
 	#carousel {
