@@ -26,17 +26,28 @@ body {
     font-size: 24px;
     line-height: 25px; }
   body section {
-    padding: 50px 0; }
+    padding: 50px 0;
+    text-align: center; }
     body section .title {
       color: #4C5666;
       font-family: "Georgia", Arial, sans-serif;
       text-align: center;
       margin-bottom: 40px; }
+    body section p {
+      padding: 0 100px;
+      text-align: left;
+      font-size: 16px; }
+      @media (min-width: 768px) {
+        body section p {
+          padding: 0 30px; } }
   body header.hero {
-    min-height: 600px;
+    max-height: 600px;
     background-size: cover;
     background-position: 50% 50%;
     background: url(/images/ventura_hero.jpg); }
+    @media (min-width: 768px) {
+      body header.hero {
+        max-height: 550px; } }
     body header.hero .title-main {
       position: relative;
       margin: 20px;
@@ -47,20 +58,28 @@ body {
       display: flex;
       justify-content: center;
       vertical-align: center; }
-      body header.hero .title-main .title-low {
-        position: absolute;
-        bottom: 0px; }
-      body header.hero .title-main h1, body header.hero .title-main h2, body header.hero .title-main h3 {
-        color: #fff;
-        font-family: "Georgia", Arial, sans-serif; }
+      @media (min-width: 768px) {
+        body header.hero .title-main {
+          min-height: 450px; } }
+      body header.hero .title-main .content {
+        justify-content: center;
+        display: flex; }
+        body header.hero .title-main .content .title-low {
+          position: absolute;
+          bottom: 0px; }
+        body header.hero .title-main .content h1, body header.hero .title-main .content h2, body header.hero .title-main .content h3 {
+          color: #fff;
+          font-family: "Georgia", Arial, sans-serif; }
     body header.hero .hero:after {
       border: 4px solid #fff; }
   body ul.nav {
-    display: block;
+    display: flex;
     text-align: center;
+    justify-content: space-around;
     border-bottom: 1px solid #D1D5D9; }
     body ul.nav li {
-      display: inline-block; }
+      display: inline-block;
+      padding: 7px 0; }
       body ul.nav li:hover {
         border-bottom: 3px solid sandybrown; }
       body ul.nav li a {
@@ -82,12 +101,25 @@ body {
     padding: 40px 0; }
     body section#general .image-promo .block {
       position: relative;
-      right: -80px;
       top: 50px;
       z-index: 999;
-      padding: 20px;
+      padding: 30px;
       background-color: #fff;
       box-shadow: 1px 1px 19px 4px #8888887a; }
+      body section#general .image-promo .block .text {
+        text-align: left; }
+    body section#general .image-promo span.left-corner {
+      position: absolute;
+      bottom: 10px;
+      right: 10px; }
+    body section#general .image-promo span.right-corner {
+      position: absolute;
+      bottom: 10px;
+      right: 10px; }
+    body section#general .image-promo .left {
+      right: -80px; }
+    body section#general .image-promo .right {
+      right: 80px; }
     body section#general .image-promo .img-block {
       max-width: 570px;
       max-height: 428px;
@@ -100,7 +132,7 @@ body {
     max-width: 100%;
     background-color: #fff;
     position: relative;
-    margin-bottom: 0.5em; }
+    margin-bottom: 70px; }
     body #carousel .shadow {
       -moz-box-shadow: 0px 16px 26px #888888;
       -webkit-box-shadow: 0px 16px 26px #888888;

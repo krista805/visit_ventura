@@ -36,7 +36,7 @@ hr {
 
 
 body {
-  background: #f5f5f5;
+  	background: #f5f5f5;
 	font-family: $avenir;
 	color: $txt-primary;
 
@@ -57,6 +57,7 @@ body {
 
 	section {
 		padding: 50px 0;
+		text-align: center;
 
 		.title {
 			color: $title;
@@ -65,13 +66,27 @@ body {
 			margin-bottom:40px;
 
 		}
+
+		p {
+			padding: 0 100px;
+			text-align:left;
+			font-size:16px;
+
+			@media (min-width: 768px){
+				padding: 0 30px;
+			}
+		}
 	}
 
 	header.hero {
-		min-height:600px;
+		max-height:600px;
 		background-size: cover;
     	background-position: 50% 50%;
 		background: url(/images/ventura_hero.jpg);
+
+		@media (min-width: 768px){
+			max-height:550px;
+		}
 
 		.title-main {
 			position:relative;
@@ -84,15 +99,25 @@ body {
 			justify-content:center;
 			vertical-align:center;
 
-			.title-low {
-				position:absolute;
-				bottom:0px;
+			@media (min-width: 768px){
+				min-height:450px;
 			}
 
-			h1, h2, h3 {
-				color: #fff;
-				font-family: $georgia;
+			.content {
+				justify-content: center;
+				display: flex;
+
+				.title-low {
+					position:absolute;
+					bottom:0px;
+				}
+
+				h1, h2, h3 {
+					color: #fff;
+					font-family: $georgia;
+				}
 			}
+
 		}
 
 		.hero:after {
@@ -101,12 +126,14 @@ body {
 	}
 
 	ul.nav {
-		display:block;
+		display:flex;
 		text-align:center;
+		justify-content: space-around;
 		border-bottom: 1px solid #D1D5D9;
 
 		li {
 			display:inline-block;
+			padding: 7px 0;
 
 			&:hover {
 				border-bottom: 3px solid $sand;
@@ -149,12 +176,34 @@ body {
 
 				.block {
 						position: relative;
-						right: -80px;
 						top: 50px;
 						z-index: 999;
-						padding: 20px;
+						padding: 30px;
 						background-color: #fff;
 						box-shadow: 1px 1px 19px 4px #8888887a;
+
+						.text {
+							text-align:left;
+						}
+				}
+
+				span.left-corner {
+					position: absolute;
+					bottom: 10px;
+					right: 10px;
+				}
+
+				span.right-corner {
+					position: absolute;
+					bottom: 10px;
+					right: 10px;
+				}
+				.left {
+					right: -80px;
+				}
+
+				.right {
+					right: 80px;
 				}
 
 				.img-block {
@@ -179,7 +228,7 @@ body {
 		max-width:100%;
 		background-color: #fff;
 		position: relative;
-		margin-bottom: 0.5em;
+		margin-bottom: 70px;
 
 		.shadow {
 			-moz-box-shadow: 0px 16px 26px #888888;
