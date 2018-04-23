@@ -488,7 +488,7 @@ span.control-top {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
-	background-color:#f1eeee;
+	background-color:#f7f7f7;
     -webkit-transition: all 0.3s linear;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
@@ -498,15 +498,11 @@ span.control-top {
 
 	&:after {
 		content: '';
-		background: transparent url('../images/up-arrow.svg') no-repeat 50% 50%;
+		background: transparent url('../images/up-arrow_1.svg') no-repeat 50% 50%;
 		display: inline-block;
-		height: 39px;
+		height: 37px;
 		width: 47px;
 		background-size: contain;
 		z-index:-1;
-		-webkit-border-radius: 50%;
-	    -moz-border-radius: 50%;
-	    border-radius: 50%;
-		background-color:#f1eeee;
 	}
 }
