@@ -26,6 +26,10 @@ body {
   body h2 {
     font-size: 32px;
     line-height: 38px; }
+    @media (max-width: 768px) {
+      body h2 {
+        font-size: 28px;
+        line-height: 36px; } }
   body h3 {
     font-size: 24px;
     line-height: 25px; }
@@ -55,7 +59,8 @@ body {
     height: 650px;
     background-size: cover !important;
     background-position: 50% 50%;
-    background: url("../images/ventura_hero_crop.jpg") no-repeat; }
+    background: url("../images/ventura_hero_crop.jpg") no-repeat;
+    opacity: 0.9; }
     @media (max-width: 992px) {
       body header.hero {
         max-height: 450px; } }
@@ -188,7 +193,7 @@ body {
     justify-content: center; }
     @media (max-width: 768px) {
       body section#general .image-promo {
-        flex-direction: column; } }
+        flex-direction: column-reverse; } }
     body section#general .image-promo .block {
       position: relative;
       top: 50px;
@@ -256,10 +261,6 @@ body {
     background-color: #fff;
     position: relative;
     margin-bottom: 70px; }
-    body #carousel .shadow {
-      -moz-box-shadow: 0px 16px 26px #888888;
-      -webkit-box-shadow: 0px 16px 26px #888888;
-      box-shadow: 0px 16px 26px #888888; }
     body #carousel .slide {
       position: absolute;
       overflow: hidden; }
@@ -283,9 +284,9 @@ body {
         width: 100%;
         bottom: 0;
         z-index: 99; }
-      @media (max-width: 546px) {
+      @media (max-width: 610px) {
         body #carousel .slide {
-          left: -0.5px; } }
+          left: -0.5px !important; } }
     body #carousel .navigate-left {
       cursor: pointer;
       position: absolute;
@@ -298,33 +299,41 @@ body {
       bottom: 20px;
       left: 605px;
       z-index: 999; }
+      @media (max-width: 610px) {
+        body #carousel .navigate-right {
+          left: 250px !important; } }
+      @media (max-width: 366px) {
+        body #carousel .navigate-right {
+          left: 204px !important; } }
+
+#footer {
+  position: relative; }
 
 span.control-top {
-  position: fixed;
-  bottom: 15px;
+  position: absolute;
   right: 15px;
-  width: 50px;
-  height: 50px;
+  bottom: 15px;
   display: block;
   text-decoration: none;
-  -webkit-border-radius: 35px;
-  -moz-border-radius: 35px;
-  border-radius: 35px;
-  display: none;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #f1eeee;
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
-  transition: all 0.3s ease; }
+  transition: all 0.3s ease;
+  cursor: pointer; }
   span.control-top:after {
     content: '';
     background: transparent url("../images/up-arrow.svg") no-repeat 50% 50%;
     display: inline-block;
-    height: 46px;
-    width: 50px;
+    height: 39px;
+    width: 47px;
     background-size: contain;
-    z-index: -1; }
-    @media (max-width: 768px) {
-      span.control-top:after {
-        height: 36px;
-        width: 40px; } }
+    z-index: -1;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #f1eeee; }

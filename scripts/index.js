@@ -10,20 +10,13 @@
      });
  });
 
- // var btn = $('span.control-top');
- //
- //   $(window).scroll(function() {
- //     if ($(window).scrollTop() > 3000) {
- //       btn.addClass('show');
- //     } else {
- //       btn.removeClass('show');
- //     }
- //   });
- //
- //   btn.on('click', function(e) {
- //     e.preventDefault();
- //     $('html, body').animate({scrollTop:0}, '300');
- //   });
+ var btn = $('span.control-top');
+
+   btn.on('click', function(e) {
+     e.preventDefault();
+     $('html, body').animate({scrollTop:0}, '300');
+
+   });
 
 
 (function($) {
