@@ -3,6 +3,29 @@
  * - All our useful JS goes here, awesome!
  */
 
+ $(function() {
+     $("li:first-child").addClass("active")
+     $(".active").mouseover(function() {
+       $(this).removeClass("active");
+     });
+ });
+
+ // var btn = $('span.control-top');
+ //
+ //   $(window).scroll(function() {
+ //     if ($(window).scrollTop() > 3000) {
+ //       btn.addClass('show');
+ //     } else {
+ //       btn.removeClass('show');
+ //     }
+ //   });
+ //
+ //   btn.on('click', function(e) {
+ //     e.preventDefault();
+ //     $('html, body').animate({scrollTop:0}, '300');
+ //   });
+
+
 (function($) {
 	$.fn.slidingCarousel = function (options) {
 		options = $.extend({}, $.fn.slidingCarousel.defaults, options || {});

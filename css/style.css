@@ -2,6 +2,7 @@
  * index.scss
  * - Add any styles you want here!
  */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Open+Sans:300,400");
 ul, ol {
   list-style-type: none; }
 
@@ -14,8 +15,11 @@ hr {
 
 body {
   background: #f5f5f5;
-  font-family: "Avenir Next", Garamond, Times, serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
   color: #a1a1a1; }
+  body h1, body h2, body h3, body h4 {
+    font-weight: 300; }
   body h1 {
     font-size: 162px;
     line-height: 185px; }
@@ -30,24 +34,34 @@ body {
     text-align: center; }
     body section .title {
       color: #4C5666;
-      font-family: "Georgia", Arial, sans-serif;
+      font-family: "Montserrat", sans-serif;
       text-align: center;
       margin-bottom: 40px; }
+      @media (max-width: 768px) {
+        body section .title {
+          text-align: left; } }
     body section p {
       padding: 0 100px;
       text-align: left;
-      font-size: 16px; }
-      @media (min-width: 768px) {
+      font-size: 16px;
+      line-height: 24px; }
+      @media (max-width: 992px) {
         body section p {
           padding: 0 30px; } }
+      @media (max-width: 768px) {
+        body section p {
+          padding: 0; } }
   body header.hero {
     height: 650px;
     background-size: cover !important;
     background-position: 50% 50%;
     background: url("../images/ventura_hero_crop.jpg") no-repeat; }
+    @media (max-width: 992px) {
+      body header.hero {
+        max-height: 450px; } }
     @media (max-width: 768px) {
       body header.hero {
-        max-height: 550px; } }
+        max-height: 400px; } }
     body header.hero .title-main {
       position: relative;
       margin: 20px;
@@ -58,18 +72,35 @@ body {
       display: flex;
       justify-content: center;
       vertical-align: center; }
+      @media (max-width: 992px) {
+        body header.hero .title-main {
+          max-height: 400px; } }
       @media (max-width: 768px) {
         body header.hero .title-main {
-          max-height: 450px; } }
+          max-height: 350px; } }
       body header.hero .title-main .content {
         justify-content: center;
         display: flex; }
         body header.hero .title-main .content .title-low {
           position: absolute;
-          bottom: 0px; }
-        body header.hero .title-main .content h1, body header.hero .title-main .content h2, body header.hero .title-main .content h3 {
+          bottom: 0px;
           color: #fff;
-          font-family: "Georgia", Arial, sans-serif; }
+          font-family: "Montserrat", sans-serif; }
+          @media (max-width: 768px) {
+            body header.hero .title-main .content .title-low {
+              font-size: 18px;
+              line-height: 22px; } }
+        body header.hero .title-main .content h1, body header.hero .title-main .content h2 {
+          color: #fff;
+          font-family: "Montserrat", sans-serif; }
+          @media (max-width: 992px) {
+            body header.hero .title-main .content h1, body header.hero .title-main .content h2 {
+              font-size: 85px;
+              line-height: 120px; } }
+          @media (max-width: 768px) {
+            body header.hero .title-main .content h1, body header.hero .title-main .content h2 {
+              font-size: 75px;
+              line-height: 100px; } }
     body header.hero .hero:after {
       border: 4px solid #fff; }
   body ul.nav {
@@ -79,8 +110,8 @@ body {
     border-bottom: 1px solid #D1D5D9; }
     body ul.nav li {
       display: inline-block; }
-      body ul.nav li:hover {
-        border-bottom: 3px solid #8C001A; }
+      body ul.nav li.active a, body ul.nav li:hover a {
+        border-bottom: 2px solid #8C001A; }
       body ul.nav li a {
         text-decoration: none;
         color: #909090;
@@ -88,6 +119,9 @@ body {
         font-size: 18px; }
         body ul.nav li a:hover {
           background-color: #fff; }
+  body .sections {
+    max-width: 1200px;
+    margin: 0 auto; }
   body section .icons {
     display: flex;
     justify-content: space-between;
@@ -96,10 +130,13 @@ body {
     body section .icons .item span {
       display: block; }
       body section .icons .item span.number {
-        font-size: 22px; }
+        font-size: 22px;
+        font-weight: 400;
+        color: #4C5666; }
       body section .icons .item span.label {
         color: #a1a1a1;
-        font-size: 16px; }
+        font-size: 16px;
+        font-weight: 300; }
     body section .icons span.map:after {
       content: '';
       background: transparent url("../images/map.svg") no-repeat 50% 50%;
@@ -107,6 +144,10 @@ body {
       height: 76px;
       width: 80px;
       background-size: contain; }
+      @media (max-width: 768px) {
+        body section .icons span.map:after {
+          height: 46px;
+          width: 50px; } }
     body section .icons span.venue:after {
       content: '';
       background: transparent url("../images/venue.svg") no-repeat 50% 50%;
@@ -114,6 +155,10 @@ body {
       height: 76px;
       width: 80px;
       background-size: contain; }
+      @media (max-width: 768px) {
+        body section .icons span.venue:after {
+          height: 46px;
+          width: 50px; } }
     body section .icons span.tickets:after {
       content: '';
       background: transparent url("../images/tickets.svg") no-repeat 50% 50%;
@@ -121,6 +166,10 @@ body {
       height: 76px;
       width: 80px;
       background-size: contain; }
+      @media (max-width: 768px) {
+        body section .icons span.tickets:after {
+          height: 46px;
+          width: 50px; } }
     body section .icons span.reviews:after {
       content: '';
       background: transparent url("../images/reviews.svg") no-repeat 50% 50%;
@@ -128,11 +177,18 @@ body {
       height: 76px;
       width: 80px;
       background-size: contain; }
+      @media (max-width: 768px) {
+        body section .icons span.reviews:after {
+          height: 46px;
+          width: 50px; } }
   body section#general .image-promo {
     position: relative;
     padding: 50px 0;
     display: flex;
     justify-content: center; }
+    @media (max-width: 768px) {
+      body section#general .image-promo {
+        flex-direction: column; } }
     body section#general .image-promo .block {
       position: relative;
       top: 50px;
@@ -144,20 +200,43 @@ body {
       @media (max-width: 1024px) {
         body section#general .image-promo .block {
           padding: 30px; } }
+      @media (max-width: 768px) {
+        body section#general .image-promo .block {
+          position: inherit;
+          top: 0;
+          left: 0;
+          padding: 0 15px;
+          box-shadow: none; } }
+      body section#general .image-promo .block h3 {
+        font-family: "Montserrat", sans-serif; }
       body section#general .image-promo .block h3, body section#general .image-promo .block .text {
         text-align: left; }
+      body section#general .image-promo .block .text {
+        margin-bottom: 10px; }
       body section#general .image-promo .block span.left-corner {
         position: absolute;
         top: 10px;
         left: 10px; }
+        @media (max-width: 768px) {
+          body section#general .image-promo .block span.left-corner {
+            display: none; } }
       body section#general .image-promo .block span.right-corner {
         position: absolute;
         bottom: 10px;
         right: 10px; }
+        @media (max-width: 768px) {
+          body section#general .image-promo .block span.right-corner {
+            display: none; } }
     body section#general .image-promo .left {
       right: -80px; }
+      @media (max-width: 768px) {
+        body section#general .image-promo .left {
+          right: 0; } }
     body section#general .image-promo .right {
       right: 80px; }
+      @media (max-width: 768px) {
+        body section#general .image-promo .right {
+          left: 0; } }
     body section#general .image-promo .img-block {
       max-width: 570px;
       max-height: 428px;
@@ -165,6 +244,12 @@ body {
       body section#general .image-promo .img-block img {
         max-width: 100%;
         height: auto; }
+  @media (max-width: 768px) {
+    body section#sights .img-contain {
+      max-height: 500px;
+      overflow: hidden; }
+      body section#sights .img-contain img {
+        max-height: 500px; } }
   body #carousel {
     height: 280px;
     max-width: 100%;
@@ -198,6 +283,9 @@ body {
         width: 100%;
         bottom: 0;
         z-index: 99; }
+      @media (max-width: 546px) {
+        body #carousel .slide {
+          left: -0.5px; } }
     body #carousel .navigate-left {
       cursor: pointer;
       position: absolute;
@@ -210,3 +298,33 @@ body {
       bottom: 20px;
       left: 605px;
       z-index: 999; }
+
+span.control-top {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-decoration: none;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  display: none;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  span.control-top:after {
+    content: '';
+    background: transparent url("../images/up-arrow.svg") no-repeat 50% 50%;
+    display: inline-block;
+    height: 46px;
+    width: 50px;
+    background-size: contain;
+    z-index: -1; }
+    @media (max-width: 768px) {
+      span.control-top:after {
+        height: 36px;
+        width: 40px; } }

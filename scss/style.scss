@@ -3,12 +3,14 @@
  * - Add any styles you want here!
  */
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Open+Sans:300,400');
 
-$georgia:  "Georgia", Arial, sans-serif;
-$avenir: "Avenir Next", Garamond, Times, serif;
 
-$light: 200;
-$normal: 300;
+$montserrat: 'Montserrat', sans-serif;
+$ssp: 'Open Sans', sans-serif;
+
+$light: 300;
+$normal: 400;
 $semibold: 500;
 $bold: 600;
 
@@ -37,8 +39,13 @@ hr {
 
 body {
   	background: #f5f5f5;
-	font-family: $avenir;
+	font-family: $ssp;
+	font-weight:$light;
 	color: $txt-primary;
+
+	h1,h2,h3,h4 {
+		font-weight: $light;
+	}
 
 	h1 {
 		font-size:162px;
@@ -61,9 +68,13 @@ body {
 
 		.title {
 			color: $title;
-			font-family: $georgia;
+			font-family: $montserrat;
 			text-align:center;
 			margin-bottom:40px;
+
+			@media (max-width: 768px){
+				text-align:left;
+			}
 
 		}
 
@@ -71,9 +82,14 @@ body {
 			padding: 0 100px;
 			text-align:left;
 			font-size:16px;
+			line-height: 24px;
 
-			@media (min-width: 768px){
+			@media (max-width: 992px){
 				padding: 0 30px;
+			}
+
+			@media (max-width: 768px){
+				padding:0;
 			}
 		}
 	}
@@ -84,8 +100,12 @@ body {
     	background-position: 50% 50%;
 		background: url('../images/ventura_hero_crop.jpg') no-repeat;
 
+		@media (max-width: 992px){
+			max-height:450px;
+		}
+
 		@media (max-width: 768px){
-			max-height:550px;
+			max-height:400px;
 		}
 
 		.title-main {
@@ -99,8 +119,12 @@ body {
 			justify-content:center;
 			vertical-align:center;
 
+			@media (max-width: 992px){
+				max-height:400px;
+			}
+
 			@media (max-width: 768px){
-				max-height:450px;
+				max-height:350px;
 			}
 
 			.content {
@@ -110,11 +134,28 @@ body {
 				.title-low {
 					position:absolute;
 					bottom:0px;
+					color: #fff;
+					font-family: $montserrat;
+
+					@media (max-width: 768px){
+						font-size:18px;
+						line-height:22px;
+					}
 				}
 
-				h1, h2, h3 {
+				h1, h2 {
 					color: #fff;
-					font-family: $georgia;
+					font-family: $montserrat;
+
+					@media (max-width: 992px){
+						font-size:85px;
+						line-height:120px;
+					}
+
+					@media(max-width:768px){
+						font-size: 75px;
+						line-height: 100px;
+					}
 				}
 			}
 
@@ -134,8 +175,12 @@ body {
 		li {
 			display:inline-block;
 
-			&:hover {
-				border-bottom: 3px solid $wine;
+
+			&.active, &:hover {
+
+				a {
+					border-bottom: 2px solid $wine;
+				}
 			}
 
 			a {
@@ -151,6 +196,11 @@ body {
 		}
 	}
 
+	.sections {
+		max-width:1200px;
+		margin:0 auto;
+	}
+
 	section {
 
 		.icons {
@@ -164,11 +214,14 @@ body {
 
 				&.number {
 					font-size:22px;
+					font-weight:$normal;
+					color: $title;
 				}
 
 				&.label {
 					color: $txt-primary;
 					font-size:16px;
+					font-weight:$light;
 				}
 			}
 
@@ -180,6 +233,11 @@ body {
 					height: 76px;
 	    			width: 80px;
 					background-size: contain;
+
+					@media (max-width:768px){
+						height:46px;
+						width:50px;
+					}
 				}
 			}
 
@@ -191,6 +249,11 @@ body {
 					height: 76px;
 	    			width: 80px;
 					background-size: contain;
+
+					@media (max-width:768px){
+						height:46px;
+						width:50px;
+					}
 				}
 			}
 
@@ -202,6 +265,11 @@ body {
 					height: 76px;
 	    			width: 80px;
 					background-size: contain;
+
+					@media (max-width:768px){
+						height:46px;
+						width:50px;
+					}
 				}
 			}
 
@@ -213,6 +281,11 @@ body {
 					height: 76px;
 	    			width: 80px;
 					background-size: contain;
+
+					@media (max-width:768px){
+						height:46px;
+						width:50px;
+					}
 				}
 			}
 		}
@@ -224,6 +297,10 @@ body {
 				padding:50px 0;
 				display:flex;
 				justify-content: center;
+
+				@media (max-width:768px){
+					flex-direction: column;
+				}
 
 				.block {
 						position: relative;
@@ -238,30 +315,62 @@ body {
 							padding: 30px;
 						}
 
+						@media (max-width:768px){
+							position:inherit;;
+							top:0;
+							left:0;
+							padding:0 15px;
+							box-shadow:none;
+						}
+
+						h3 {
+							font-family:$montserrat;
+						}
+
 						h3, .text {
 							text-align:left;
+						}
+
+						.text {
+							margin-bottom: 10px;
 						}
 
 						span.left-corner {
 							position: absolute;
 							top: 10px;
 							left: 10px;
+
+							@media (max-width:768px){
+								display:none;
+							}
 						}
 
 						span.right-corner {
 							position: absolute;
 							bottom: 10px;
 							right: 10px;
+
+							@media (max-width:768px){
+								display:none;
+							}
 						}
 				}
 
 
 				.left {
 					right: -80px;
+
+					@media(max-width:768px){
+						right:0;
+					}
 				}
 
 				.right {
 					right: 80px;
+
+					@media(max-width:768px){
+						left:0;
+					}
 				}
 
 				.img-block {
@@ -272,6 +381,19 @@ body {
 					img {
 						max-width:100%;
 						height:auto;
+					}
+				}
+			}
+		}
+
+		&#sights {
+			.img-contain {
+				@media(max-width:768px) {
+					max-height: 500px;
+    				overflow: hidden;
+
+					img {
+						max-height:500px;
 					}
 				}
 			}
@@ -321,6 +443,11 @@ body {
 				bottom: 0;
 				z-index: 99;
 			}
+
+			@media (max-width:546px){
+				left:-0.5px;
+				// right:-15px;
+			}
 		}
 
 		.navigate-left {
@@ -337,6 +464,40 @@ body {
 			bottom: 20px;
 			left: 605px;
 			z-index:999;
+		}
+	}
+}
+
+span.control-top {
+	position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+	&:after {
+		content: '';
+		background: transparent url('../images/up-arrow.svg') no-repeat 50% 50%;
+		display: inline-block;
+		height: 46px;
+		width: 50px;
+		background-size: contain;
+		z-index:-1;
+
+		@media (max-width:768px){
+			height:36px;
+			width:40px;
 		}
 	}
 }
