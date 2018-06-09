@@ -233,12 +233,14 @@ body {
           body section#general .image-promo .block span.right-corner {
             display: none; } }
     body section#general .image-promo .left {
-      right: -80px; }
+      right: -80px;
+      max-width: 450px; }
       @media (max-width: 768px) {
         body section#general .image-promo .left {
           right: 0; } }
     body section#general .image-promo .right {
-      right: 80px; }
+      right: 80px;
+      max-width: 450px; }
       @media (max-width: 768px) {
         body section#general .image-promo .right {
           left: 0; } }

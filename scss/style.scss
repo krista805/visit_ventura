@@ -365,14 +365,17 @@ body {
 
 				.left {
 					right: -80px;
+					max-width: 450px;
 
 					@media(max-width:768px){
 						right:0;
+
 					}
 				}
 
 				.right {
 					right: 80px;
+					max-width: 450px;
 
 					@media(max-width:768px){
 						left:0;
